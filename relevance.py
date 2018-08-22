@@ -23,9 +23,9 @@ def relevance(**kwargs):
         "post":post_id,
         "value":str(relevance)
         }
-    user = # e2mc data api username. Although harcoded here, it could be easily included in the settings file
-    pass = # e2mc data api password. Although harcoded here, it could be easily included in the settings file
-    r = requests.post('http://131.175.120.92:5555/e2mc/datapi/v1.1/tags', auth=(user, pass), headers=headers, data=json.dumps(payload))
+    username = # e2mc data api username. Although harcoded here, it could be easily included in the settings file
+    password = # e2mc data api password. Although harcoded here, it could be easily included in the settings file
+    r = requests.post('http://131.175.120.92:5555/e2mc/datapi/v1.1/tags', auth=(username, password), headers=headers, data=json.dumps(payload))
     with open('./static/results.json', 'w') as f:
         f.write(json.dumps(kwargs))
     return r
